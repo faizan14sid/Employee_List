@@ -2,6 +2,7 @@ import React from 'react'
 import { Nav, NavDropdown, Container, Navbar, Button } from 'react-bootstrap'
 import AddEmployee from './AddEmployee';
 import userImage from './mypic.jpg';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -13,7 +14,8 @@ const Header = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto"> </Nav>
                         <Nav>
-                            <Nav.Link href="#link">Logout</Nav.Link>
+                            <Nav.Link><Link to="/logout" style={{ textDecoration: 'inherit', textDecorationColor: 'inherit' }}>Logout</Link></Nav.Link>
+
                             <NavDropdown title="User Info" id="basic-nav-dropdown">
 
                                 <NavDropdown.Item ><img src={userImage} alt="userImage" style={{ width: 50, height: 50, borderRadius: 25 }} /></NavDropdown.Item>
