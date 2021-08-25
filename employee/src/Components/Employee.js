@@ -23,15 +23,20 @@ const Employee = () => {
     const classes = useStyles();
     const location = useLocation();
     const list = location.state.detail;
-    const [empDetails, SetEmpDetails] = useState([]);
+    const [empDetails, setEmpDetails] = useState([]);
+
 
     //fetching url inside api 
     useEffect(() => {
         axios.get(list.url)
-            .then((response) => SetEmpDetails(response.data))
+            .then((response) => setEmpDetails(response.data))
             .catch(error => console.error(`Error: ${error}`));
         console.log("hii")
     }, [list.url])
+
+    const handleOnChange = (e) => {
+        setEmpDetails(e.target.value)
+    }
 
     return (
         <div className={classes.root}>
@@ -45,7 +50,7 @@ const Employee = () => {
                         <input
                             type="text"
                             value={empDetails.name}
-
+                            onChange={handleOnChange}
                         ></input>
                     </div>
                         <div style={{ marginTop: 10 }}>
@@ -53,7 +58,7 @@ const Employee = () => {
                             <input
                                 type="text"
                                 value={empDetails.id}
-
+                                onChange={handleOnChange}
                             ></input>
                         </div>
                     </div>
@@ -64,7 +69,7 @@ const Employee = () => {
                             style={{ width: 450 }}
                             type="text"
                             value={empDetails.company}
-
+                            onChange={handleOnChange}
                         ></input>
                     </div>
 
@@ -73,7 +78,7 @@ const Employee = () => {
                         <input
                             type="text"
                             value={empDetails.location}
-
+                            onChange={handleOnChange}
                         ></input>
                     </div>
 
@@ -86,7 +91,7 @@ const Employee = () => {
                         <input
                             type="text"
                             value={empDetails.public_repos}
-
+                            onChange={handleOnChange}
                         ></input>
                     </div>
                     <div style={{ marginTop: 10 }}>
@@ -94,7 +99,7 @@ const Employee = () => {
                         <input
                             type="text"
                             value={empDetails.followers}
-
+                            onChange={handleOnChange}
                         ></input>
                     </div>
                     <div style={{ marginTop: 10 }}>
@@ -102,7 +107,7 @@ const Employee = () => {
                         <input
                             type="text"
                             value={empDetails.following}
-
+                            onChange={handleOnChange}
                         ></input>
                     </div>
                 </div>

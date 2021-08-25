@@ -1,7 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Components/Home';
-import EmployeeList from './Components/EmployeeList';
 import Header from './Components/Header';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Employee from './Components/Employee';
@@ -11,7 +10,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header />
-        <EmployeeList />
+        <Route exact path="/">
+          <Home />
+        </Route>
         <Switch>
           <Route path="/employeedetails">
             <Employee />
