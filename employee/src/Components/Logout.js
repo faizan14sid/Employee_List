@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
 import { UserContext } from '../App';
+import {Button} from 'react-bootstrap';
 
 const Logout = () => {
     const { state, dispatch } = useContext(UserContext);
@@ -15,7 +16,7 @@ const Logout = () => {
 
     return (
         <div>
-            <h1>Logout</h1>
+        <Button>Logout</Button>
         </div>
     )
 }

@@ -10,7 +10,7 @@ const Home = () => {
 
     const [employee, setEmployee] = useState([]);
     const location = useLocation();
-    const username = location.state.detail;
+    const username = location.state?.detail;
 
 
     // fetching list of employee from given api
@@ -55,12 +55,12 @@ const Home = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {employee.map((list, index) => {
+                    {employee && employee.map((list, index) => {
                         return (
 
                             <tr>
                                 <td>{(index + 1)}</td>
-                                <td >{list.login}</td>
+                                <td >{list?.login}</td>
                                 <td><Link style={{ color: "inherit", textDecoration: "inherit" }} to={{ pathname: "/employeedetails", state: { detail: list } }}><VisibilityIcon /></Link></td>
                                 <td><Button type="text" variant="danger" onClick={(event) => { handleDelete(index) }}> <DeleteIcon /></Button></td>
                             </tr>

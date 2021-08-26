@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 const Employee = () => {
     const classes = useStyles();
     const location = useLocation();
-    const list = location.state.detail;
+    const list = location.state?.detail;
     const [empDetails, setEmpDetails] = useState([]);
 
 

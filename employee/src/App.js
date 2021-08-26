@@ -33,7 +33,16 @@ export const Routing = () => {
   }
   else {
     return (
-      <Login />
+    
+     <>
+        <Header />
+        <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+        </Switch>
+      </>
+      
     )
   }
 }
